@@ -1,0 +1,30 @@
+1. Создние потоков
+
+Способ №1
+Создать класс унаследованный от класса Thread
+
+    class MyThread extends Thread{
+        @Override
+        public void run() {
+            // здесь пишем код, который будет выполняться в этом потоке.
+        }
+    }
+Затем в методе main создать объект каласса
+    MyThread1 myThread1 = new MyThread1();
+и вызвать у этого объекта метод start()
+    myThread1.start();
+Примечание:  объектов класса можно создавать сколько угодно.
+
+Способ №2
+
+Создать класс реализующий интерфейс Runnable и переопределить метод run()
+    class Runner implements Runnable{
+        @Override
+        public void run() {
+             // здесь пишем код, который будет выполняться в этом потоке.
+    }
+
+Затем в методе main создать объект каласса Thread и передать в его коструктор объект класса, реализующего Runnable
+    Thread thread = new Thread(new Runner());
+    thread.start();
+
